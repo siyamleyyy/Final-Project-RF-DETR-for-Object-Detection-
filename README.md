@@ -26,12 +26,12 @@ _An example of the model detecting a 'helmet' and a 'head' on workers._
 **Installation**
 To get started with this project, clone the repository and set up the Python environment.
 
-- 1. Clone the repository:
+1. Clone the repository:
 
 git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
 cd YOUR_REPOSITORY_NAME
 
-- 2. Create and activate a virtual environment (recommended):
+2. Create and activate a virtual environment (recommended):
 
 python -m venv .venv
 # On Windows
@@ -39,7 +39,7 @@ python -m venv .venv
 # On macOS/Linux
 source .venv/bin/activate
 
-- 3. Install the required dependencies:
+3. Install the required dependencies:
 
 pip install -r requirements.txt
 
@@ -50,31 +50,34 @@ pip install roboflow torch torchvision opencv-python matplotlib scipy pillow pyc
 **Usage**
 _Before running the script, you need to configure your Roboflow API key to download the dataset._
 
-- 1. Get Your Roboflow API Key:
+1. Get Your Roboflow API Key:
 
 Log in to your Roboflow account.
 
 Go to your workspace Settings and copy your Private API Key. This is crucial; the public key will not work for this script.
 
-- 2. Fork the Dataset:
+2. Fork the Dataset:
 
 Go to the Hard Hat Detection project on Roboflow Universe.
 
 Click "Fork Dataset" to copy it to your own workspace. This will give you the necessary permissions.
 
-- 3. Update the Script:
+3. Update the Script:
 
 Open the main Python script (Final_Exam.py or your script name).
 
 Find the data loading section and replace the placeholders with your Private API Key, Workspace ID, and Project ID.
 
-# Example from the script
+_Example from the script_
+
+```python
 rf = Roboflow(api_key="YOUR_PRIVATE_API_KEY")
 project = rf.workspace("YOUR_WORKSPACE_ID").project("YOUR_PROJECT_ID")
 version = project.version(3) # Or your forked version number
 dataset = version.download("coco")
+```
 
-- 4. Run the Training Script:
+4. Run the Training Script:
 
 Execute the main script from your terminal:
 
